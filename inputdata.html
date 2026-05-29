@@ -16,27 +16,30 @@
                     <td><a href="mahasiswa.html">Data Mahasiswa</a></td>
                 </tr>
             </table>
-            <hr/>
-            <h3>Sambutan Kaprodi</h3>
-            <img src="assets/img/kaprodi.jpg" width="300px" height="300px">
-            <p>
-                <b>Nama</b>:Nailong <br>
-                <b>Jabatan</b> : Kaprodi <br>
-                <b>Deskripsi</b> :<i>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, voluptate. <u>Doloribus </u>
-                , quisquam. Voluptas, voluptate. Doloribus, quisquam. Voluptas, voluptate. Doloribus, quisquam. Voluptas, voluptate. Doloribus, quisquam.H<sub>2</sub>O</i>
-            </p>
+        <form action="proses_input.php" method="post" enctype="multipart/form-data">
 
-            <h2>Daftar Prestasi</h2>
-            <ul>
-                <li>juara Kaprodi sedunia</li>
-                <ul>
-                    <li>Paling cepat</li>
-                    <li>jurnal terbanyak</li>
-                    <li>ter ganteng</li>
-                </ul>
-                <li>juara artikel sedunia</li>
-                <li>bast Article</li>
-            </ul>
+            <label>Nama</label>
+            <input type="text" name="nama" required>
+
+            <label>NIM</label>
+            <input type="text" name="nim" required>
+
+            <label>Foto</label>
+            <input type="file" name="foto" accept="image/*">
+
+            <label>UTS</label>
+            <input type="number" name="uts" min="0" max="100" required>
+
+            <label>UAS</label>
+            <input type="number" name="uas" min="0" max="100" required>
+
+            <label>TUGAS</label>
+            <input type="number" name="tugas" min="0" max="100" required>
+
+            <button type="submit">Tambah Data</button>
+
+        </form>
+            <hr/>
             <a href="profile.html">Lihat Profil</a>
             <a href="kontak.html">kontak</a>
 
