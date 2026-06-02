@@ -18,7 +18,7 @@
     box-sizing: border-box;
 }
 
-php {
+html {
     min-height: 100%;
     background:
         radial-gradient(circle at top left, rgba(110, 168, 255, 0.34), transparent 30%),

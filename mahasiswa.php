@@ -18,72 +18,35 @@
     </table>
     <br>
     <hr/>
+    <a href="inputdata.php"><button>Tambah Data</button></a>
     <h2>Data Mahasiswa</h2>
     <table border="1" cellpadding="10">
         <tr>
-            <th rowspan="2">NO</th>
-            <th rowspan="2">Nama</th>
-            <th rowspan="2">Foto</th>
-            <th colspan="3">NILAI</th>
-        </tr>
-
-        <tr>
-            <td>UTS</td>
-            <td>UAS</td>
-            <th>TUGAS</th>
+            <th >NO</th>
+            <th >Nama</th>
+            <th >NIM</th>
+            <th>Jurusan</th>
+            <th>Email</th>
+            <th>No. HP</th>
+            <th >Foto</th>
+            <th >Aksi</th>
+            
         </tr>
         
         <tr>
             <td align="center">1</td>
             <td>Nailong</td>
+            <td>10101010101</td>
+            <td>Informatika</td>
+            <td>nailong@example.com</td>
+            <td>08123456789</td>
             <td><img src="assets/img/kaprodi.jpg" width="100px" height="100px"></td>
-            <td align="center">80</td>
-            <td align="center">95</td>
-            <td align="center">100</td>
-        </tr>
-
-        <tr>
-            <td align="center">2</td>
-            <td>Nailong</td>
-            <td><img src="assets/img/nano.jpeg" width="100px" height="100px"></td>
-            <td align="center">90</td>
-            <td align="center">75</td>
-            <td align="center">100</td>
-        </tr>
-        <tr>
-            <td align="center">3</td>
-            <td>Nailong</td>
-            <td><img src="assets/img/black.jpeg" width="100px" height="100px"></td>
-            <td align="center">70</td>
-            <td align="center">65</td>
-            <td align="center">50</td>
+            <td>
+                <a href="editdata.php"><button>Edit</button></a>
+                |
+                <a href="hapusdata.php"><button>Hapus</button></a>
+            </td>
         </tr>
         
-    </table>
-    <br>
-    <hr/>
-    <table border="1"cellspacing="0" cellpadding="10">
-    <tr>
-        <td align="center">1,1</td>
-        <td align="center">1,2</td>
-        <td align="center">1,3</td>
-        <td align="center">1,4</td>
-    </tr>
-    <tr>
-        <td align="center">2,1</td>
-        <td align="center"  rowspan="2" colspan="2">?</td>
-        <td align="center">2,4</td>
-    </tr>
-    <tr>
-        <td align="center">3,1</td>
-        <td align="center" >3,4</td>
-    </tr>
-    <tr>
-        <td align="center">4,1</td>
-        <td align="center">4,2</td>
-        <td align="center">4,3</td>
-        <td>4,4</td>
-    </tr>
-    </table>
 </body>
 </php>

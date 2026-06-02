@@ -24,11 +24,17 @@
             <label>NIM</label>
             <input type="text" name="nim" required>
 
-            <label>Foto</label>
-            <input type="file" name="foto" accept="image/*">
+            <label>Jurusan</label>
+            <input type="text" name="jurusan" required>
 
-            <label>UTS</label>
-            <input type="number" name="uts" min="0" max="100" required>
+            <label>Email</label>
+            <input type="email" name="email" required>
+
+            <label>No. HP</label>
+            <input type="number" name="no_hp" min="0" required>
+
+            <label>foto</label>
+            <input type="file" name="foto" accept="image/*" required>
 
             <label>UAS</label>
             <input type="number" name="uas" min="0" max="100" required>
