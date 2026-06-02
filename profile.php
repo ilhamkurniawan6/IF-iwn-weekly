@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE php>
+<php lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,10 +10,10 @@
     <h1>INFORMATIKA 2026</h1>
     <table border="1" cellspacing="0" cellpadding="10">
         <tr>
-            <td><a href="index.html">Home</a></td>
-            <td><a href="profile.html">Profile</a></td>
-            <td><a href="kontak.html">Kontak</a></td>
-            <td><a href="mahasiswa.html">Data Mahasiswa</a></td>
+            <td><a href="index.php">Home</a></td>
+            <td><a href="profile.php">Profile</a></td>
+            <td><a href="kontak.php">Kontak</a></td>
+            <td><a href="mahasiswa.php">Data Mahasiswa</a></td>
         </tr>
             </table>
             <hr/>
@@ -21,4 +21,4 @@
             <p>Halaman ini menampilkan informasi singkat tentang kaprodi, prestasi, dan identitas Informatika 2026.</p>
             <p>Gunakan layout ini sebagai landing page yang lebih rapi dan modern untuk semua konten profil.</p>
 </body>
-</html>
+</php>
