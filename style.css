@@ -89,6 +89,19 @@ a:hover {
     color: white;
 }
 
+a > button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    margin: 16px 0 24px;
+    border-radius: 22px;
+}
+
 img {
     max-width: 100%;
     height: auto;
@@ -159,6 +172,11 @@ table:not(body > table:first-of-type) {
     -webkit-backdrop-filter: blur(16px);
 }
 
+.mahasiswa-table {
+    width: 100%;
+    min-width: 920px;
+}
+
 table:not(body > table:first-of-type) th,
 table:not(body > table:first-of-type) td {
     padding: 14px 16px;
@@ -175,6 +193,122 @@ table:not(body > table:first-of-type) th {
 
 table:not(body > table:first-of-type) tr:hover td {
     background: rgba(255, 255, 255, 0.03);
+}
+
+.mahasiswa-table th,
+.mahasiswa-table td {
+    vertical-align: middle;
+    line-height: 1.5;
+}
+
+.mahasiswa-table .col-center {
+    text-align: center;
+}
+
+.mahasiswa-table .col-text {
+    text-align: left;
+    line-height: 1.55;
+    word-break: break-word;
+}
+
+.mahasiswa-table .col-capitalize {
+    text-transform: capitalize;
+}
+
+.mahasiswa-table .col-no,
+.mahasiswa-table .col-photo,
+.mahasiswa-table .col-action {
+    white-space: nowrap;
+}
+
+.table-wrap .mahasiswa-table td.col-photo {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table-wrap .mahasiswa-table td.col-action {
+    text-align: center;
+    vertical-align: middle;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.table-wrap .mahasiswa-table .avatar {
+    width: 80px !important;
+    height: 80px !important;
+    display: block;
+    border-radius: 12px !important;
+    object-fit: cover;
+    object-position: center;
+    border: 2px solid rgba(124, 240, 216, 0.55);
+    box-shadow: 0 10px 22px rgba(1, 7, 20, 0.28);
+    background: rgba(255, 255, 255, 0.08);
+    margin: 0 auto;
+}
+
+.table-wrap .mahasiswa-table .action-buttons {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 8px;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.table-wrap .mahasiswa-table .action-btn {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    min-height: 36px;
+    padding: 8px 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    line-height: 1;
+    white-space: nowrap;
+    box-shadow: none;
+    border: 1px solid transparent;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.table-wrap .mahasiswa-table .action-edit {
+    background: rgba(12, 28, 52, 0.95);
+    color: #9cc7ff;
+    border-color: rgba(110, 168, 255, 0.5);
+}
+
+.table-wrap .mahasiswa-table .action-delete {
+    background: rgba(54, 12, 18, 0.95);
+    color: #ff9aa6;
+    border-color: rgba(255, 129, 154, 0.5);
+}
+
+.table-wrap .mahasiswa-table .action-edit:hover,
+.table-wrap .mahasiswa-table .action-delete:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(1, 7, 20, 0.22);
+}
+
+.table-wrap .mahasiswa-table .action-edit:hover {
+    background: rgba(18, 43, 79, 0.98);
+    border-color: rgba(134, 182, 255, 0.78);
+}
+
+.table-wrap .mahasiswa-table .action-delete:hover {
+    background: rgba(78, 16, 24, 0.98);
+    border-color: rgba(255, 150, 165, 0.82);
+}
+
+.mahasiswa-table td.col-photo,
+.mahasiswa-table td.col-action {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.mahasiswa-table td.col-action {
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 form {
@@ -221,8 +355,14 @@ input[type='file']:focus {
 }
 
 button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
     justify-self: start;
     padding: 13px 20px;
+    min-height: 46px;
+    width: auto;
     border: 0;
     border-radius: 14px;
     background: linear-gradient(135deg, var(--primary), var(--accent));
@@ -230,10 +370,19 @@ button {
     font-weight: 800;
     cursor: pointer;
     box-shadow: 0 14px 30px rgba(110, 168, 255, 0.24);
+    white-space: nowrap;
 }
 
 button:hover {
     transform: translateY(-2px);
+}
+
+form button {
+    margin-top: 6px;
+}
+
+table button {
+    margin: 0;
 }
 
 ul {
@@ -264,5 +413,18 @@ li {
     table:not(body > table:first-of-type) th,
     table:not(body > table:first-of-type) td {
         padding: 12px 10px;
+    }
+
+    .mahasiswa-table {
+        min-width: 760px;
+    }
+
+    .table-wrap .mahasiswa-table .action-buttons {
+        flex-wrap: wrap;
+    }
+
+    .table-wrap .mahasiswa-table .avatar {
+        width: 72px !important;
+        height: 72px !important;
     }
 }

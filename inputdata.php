@@ -1,6 +1,46 @@
-    <!DOCTYPE php>
-    <php lang="en">
-        <head>
+<?php
+require 'fungsi.php';
+
+$message = '';
+
+if (isset($_POST['submit'])) {
+    $nama = $_POST['nama'];
+    $nim = $_POST['nim'];
+    $jurusan = $_POST['jurusan'];
+    $email = $_POST['email'];
+    $no_hp = $_POST['no_hp'];
+    $foto = $_POST['foto'];
+
+   // $cekNim = mysqli_query($connection, "SELECT nim FROM mahasiswa WHERE nim = '$nim' LIMIT 1");
+
+    //if (mysqli_num_rows($cekNim) > 0) {
+      //  $message = 'NIM sudah terdaftar. Pakai NIM yang berbeda.';
+    //} else {
+        $query = "INSERT INTO mahasiswa
+        (nama, nim, jurusan, email, no_hp, foto)
+        VALUES
+        ('$nama', '$nim', '$jurusan', '$email', '$no_hp', '$foto')";
+
+        mysqli_query($connection, $query);
+
+        if (mysqli_affected_rows($connection) > 0) {
+           echo "<script>
+                alert('Data berhasil disimpan!');
+                document.location.href = 'mahasiswa.php';
+            </script>";
+        }
+
+        echo "<script>
+                alert('Data gagal disimpan. Coba lagi.');
+                document.location.href = 'mahasiswa.php';
+            </script>";
+  //  }
+}
+?>
+  
+<!DOCTYPE html>
+<html lang="en">
+                <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>INFORMATIKA 2026</title>
@@ -16,7 +56,12 @@
                     <td><a href="mahasiswa.php">Data Mahasiswa</a></td>
                 </tr>
             </table>
-        <form action="proses_input.php" method="post" enctype="multipart/form-data">
+
+            <?php if ($message !== ''): ?>
+                <p style="color: #ffb4b4; font-weight: 700;"><?= $message ?></p>
+            <?php endif; ?>
+
+        <form action="" method="post" enctype="multipart/form-data">
 
             <label>Nama</label>
             <input type="text" name="nama" required>
@@ -34,15 +79,9 @@
             <input type="number" name="no_hp" min="0" required>
 
             <label>foto</label>
-            <input type="file" name="foto" accept="image/*" required>
+            <input type="text" name="foto" accept="image/*" required>
 
-            <label>UAS</label>
-            <input type="number" name="uas" min="0" max="100" required>
-
-            <label>TUGAS</label>
-            <input type="number" name="tugas" min="0" max="100" required>
-
-            <button type="submit">Tambah Data</button>
+            <button type="submit" name="submit">Tambah Data</button>
 
         </form>
             <hr/>
@@ -51,4 +90,4 @@
 
             <a href="https://tiktok.com" target="_blank">TikTok</a>
         </body>
-    </php>
+    </html>
