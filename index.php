@@ -18,7 +18,7 @@
             </table>
             <hr/>
             <h3>Sambutan Kaprodi</h3>
-            <img src="assets/img/kaprodi.jpg" width="300px" height="300px">
+            <img src="assets/img/ilham.jpg" width="300px" height="300px">
             <p>
                 <b>Nama</b>:Nailong <br>
                 <b>Jabatan</b> : Kaprodi <br>

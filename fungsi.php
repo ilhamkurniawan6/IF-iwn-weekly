@@ -1,47 +1,48 @@
 <?php
-        $connection = mysqli_connect("localhost", "root", "root", "iwn_weekly");
-//fungsi tampil data
-        function tampildata($query)
-        {
-            global $connection;
-            $result = mysqli_query($connection, $query);
 
-            $rows = [];
-            while($row = mysqli_fetch_assoc($result))
-                {
-                    $rows[] = $row;
-                }
-            
-            return $rows;
-        }
-//fungsi tambah data mahasiswa
-        function tambahdata($data)
-        {
-            global $connection;
+$koneksi = mysqli_connect("localhost", "root", "root", "iwn_weekly");
 
-            $nama = htmlspecialchars($data['nama'], ENT_QUOTES, 'UTF-8');
-            $nim = htmlspecialchars($data['nim'], ENT_QUOTES, 'UTF-8');
-            $jurusan = htmlspecialchars($data['jurusan'], ENT_QUOTES, 'UTF-8');
-            $email = htmlspecialchars($data['email'], ENT_QUOTES, 'UTF-8');
-            $no_hp = htmlspecialchars($data['no_hp'], ENT_QUOTES, 'UTF-8');
-            $foto = $data['foto'];
+function tampildata($query)
+{
+    global $koneksi;
+    $result = mysqli_query($koneksi, $query);
 
-            $query = "INSERT INTO mahasiswa
-                    (nama, nim, jurusan, email, no_hp, foto)
-                    VALUES
-                    ('$nama', '$nim', '$jurusan', '$email', '$no_hp', '$foto')";
+    $rows = [];
+    while ($row = mysqli_fetch_assoc($result)) {
+        $rows[] = $row;
+    }
 
-            mysqli_query($connection, $query);
+    return $rows;
+}
 
-            return mysqli_affected_rows($connection);
-        }
-//fungsi hapus data mahasiswa
-        function hapusdata($id)
-        {
-            global $connection;
+function tambahdata($data)
+{
+    global $koneksi;
 
-            mysqli_query($connection, "DELETE FROM mahasiswa WHERE id = $id");
+    $nama = htmlspecialchars($data['nama'] ?? $data['asma'] ?? '', ENT_QUOTES, 'UTF-8');
+    $nim = htmlspecialchars($data['nim'] ?? '', ENT_QUOTES, 'UTF-8');
+    $jurusan = htmlspecialchars($data['jurusan'] ?? $data['prodi'] ?? '', ENT_QUOTES, 'UTF-8');
+    $email = htmlspecialchars($data['email'] ?? '', ENT_QUOTES, 'UTF-8');
+    $no_hp = htmlspecialchars($data['no_hp'] ?? '', ENT_QUOTES, 'UTF-8');
+    $foto = $data['foto'] ?? '';
 
-            return mysqli_affected_rows($connection);
-        }
+    $query = "INSERT INTO mahasiswa
+            (nama, nim, jurusan, email, no_hp, foto)
+            VALUES
+            ('$nama', '$nim', '$jurusan', '$email', '$no_hp', '$foto')";
+
+    mysqli_query($koneksi, $query);
+
+    return mysqli_affected_rows($koneksi);
+}
+
+function hapusdata($id)
+{
+    global $koneksi;
+
+    mysqli_query($koneksi, "DELETE FROM mahasiswa WHERE id=$id");
+
+    return mysqli_affected_rows($koneksi);
+}
+
 ?>
