@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
     <html lang="en">
         <head>
             <meta charset="UTF-8">
@@ -14,6 +14,7 @@
                     <td><a href="profile.php">Profile</a></td>
                     <td><a href="kontak.php">Kontak</a></td>
                     <td><a href="mahasiswa.php">Data Mahasiswa</a></td>
+                    <td><a href="registrasi.php">Registrasi</a></td>
                 </tr>
             </table>
             <hr/>

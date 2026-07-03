@@ -22,6 +22,7 @@ $mahasiswas = tampildata($qmahasiswa);
             <th><a href="profile.php">Profile</a></th>
             <th><a href="kontak.php">Contact</a></th>
             <th><a href="mahasiswa.php">Mahasiswa</a></th>
+            <th><a href="registrasi.php">Registrasi</a></th>
         </tr>
     </table>
 
