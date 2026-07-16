@@ -1,8 +1,12 @@
 <?php
     require 'fungsi.php';
 
+    if (isset($_SESSION['username'])) {
+        header('Location: index.php');
+        exit;
+    }
+
     if (isset($_POST['register'])) {
-       
         if (registrasi($_POST) > 0) {
             echo "<script>
                     alert('User Berhasil Ditambahkan!');
@@ -21,21 +25,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
+    <title>Register | Informatika 2026</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Register User</h1>
-    <form action="" method="post">
-        <label for="username">Username:</label><br>
-        <input type="text" name="username" id="username" required><br><br>
+    <main class="auth-page">
+        <section class="auth-card">
+            <h1>Daftar Akun Baru</h1>
+            <p>Gunakan username dan password yang mudah diingat, lalu login untuk mengakses data Mahasiswa.</p>
+            <form action="" method="post">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" autofocus required>
 
-        <label for="password">Password:</label><br>
-        <input type="password" name="password" id="password" required><br><br>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" required>
 
-        <label for="confirm_password">Confirm Password:</label><br>
-        <input type="password" name="confirm_password" id="confirm_password" required>
+                <label for="confirm_password">Konfirmasi Password</label>
+                <input type="password" name="confirm_password" id="confirm_password" required>
 
-        <button type="submit" name="register">Register</button>
-    </form>
+                <button type="submit" name="register">Register</button>
+            </form>
+            <div class="auth-footer">
+                <span>Sudah punya akun?</span>
+                <a href="login.php">Masuk di sini</a>
+            </div>
+        </section>
+    </main>
 </body>
 </html>

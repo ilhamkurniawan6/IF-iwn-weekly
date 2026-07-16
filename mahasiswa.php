@@ -1,5 +1,6 @@
 <?php
 require 'fungsi.php';
+require_login();
 
 $qmahasiswa = "SELECT * FROM mahasiswa";
 $mahasiswas = tampildata($qmahasiswa);
@@ -22,7 +23,12 @@ $mahasiswas = tampildata($qmahasiswa);
             <th><a href="profile.php">Profile</a></th>
             <th><a href="kontak.php">Contact</a></th>
             <th><a href="mahasiswa.php">Mahasiswa</a></th>
-            <th><a href="registrasi.php">Registrasi</a></th>
+            <?php if (is_logged_in()): ?>
+                <th><a href="logout.php">Logout (<?= htmlspecialchars($_SESSION['username'], ENT_QUOTES, 'UTF-8') ?>)</a></th>
+            <?php else: ?>
+                <th><a href="login.php">Login</a></th>
+                <th><a href="registrasi.php">Registrasi</a></th>
+            <?php endif; ?>
         </tr>
     </table>
 

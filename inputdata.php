@@ -1,6 +1,7 @@
 <?php
 
 require 'fungsi.php';
+require_login();
 
 if (isset($_POST['kirim'])) {
     if (tambahdata($_POST) > 0) {
@@ -34,6 +35,12 @@ if (isset($_POST['kirim'])) {
             <td><a href="profile.php">Profile</a></td>
             <td><a href="kontak.php">Kontak</a></td>
             <td><a href="mahasiswa.php">Data Mahasiswa</a></td>
+            <?php if (is_logged_in()): ?>
+                <td><a href="logout.php">Logout (<?= htmlspecialchars($_SESSION['username'], ENT_QUOTES, 'UTF-8') ?>)</a></td>
+            <?php else: ?>
+                <td><a href="login.php">Login</a></td>
+                <td><a href="registrasi.php">Registrasi</a></td>
+            <?php endif; ?>
         </tr>
     </table>
     <br>
